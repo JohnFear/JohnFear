@@ -46,6 +46,7 @@ Thanks goes to these wonderful people:
 <table>
   <tr>
     <td align="center"><a href="https://github.com/whati001"><img src="https://avatars3.githubusercontent.com/u/16085873?s=460&v=4" width="100px;" alt=""/><br /><sub><b>whati001</b></sub></a><br /><a href="#question" title="Answering Questions">💬 </a><a href="#infrastructure" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/GatCode"><img src="https://avatars1.githubusercontent.com/u/19287308?s=460&u=602e33f36c7705518e703051725f3accb767a587&v=4" width="100px;" alt=""/><br /><sub><b>GatCode</b></sub></a><br /><a href="#question" title="Answering Questions">💬 </a><a href="#infrastructure" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
