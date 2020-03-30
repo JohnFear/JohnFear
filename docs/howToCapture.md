@@ -1,12 +1,12 @@
 # How to capture
-Now finally we will introduce you how to sniff and capture can bus data.
-For this we used a [CANable PRO][1] board with candlelight firmware in compination with [wireshark][2].
+This chaper shows how we captured the CAN data with the [CANable PRO][1] board. Please take a look at the [hardware chapter](./hardware.md) for more information about the board as well as the firmware and the computer.
 
-## Connector
-Please see your Hardware [page](./hardware.md) and prepare everything properly. 
+To start the capturing, proceed with the following steps!
 
-## Interface
-If your connector is prepared please connect it to your pc. Now we need to bring the native (with candlelight) can device up. Within this step we define the baudrate. 
+## Step 1: Interface
+Make sure that the board as well as the wiring is setup correctly before you proceed.
+
+First, connect the board to the computer (NOT TO THE TRAKTOR). To enable the device (candlelight firmware), the following commands can be used:
 
 ```
   # command generic
@@ -26,17 +26,20 @@ If your connector is prepared please connect it to your pc. Now we need to bring
   ip link show
 ```
 
-If no error occured, `can0` device is not ready for sniffing.
-Now you can connect to board to your tractor, we recommend to do this with a stopped engine.
+If no error occured, the `can0` device is now ready for Wireshark.
 
-## Wireshark
-Start [wireshark][2] and start a new capture for the can device, in your case `can0`.
+Now you can connect the board to the tractor, we recommend you to do this when the engine is off.
 
-## Start Engine
-Fire up the tractor. It is enought to start board computer without engine first, you should already receive can message yet. If only bus valuation messages pop up, you may have used the wrong baudrate.
+## Step 2: Wireshark
+Start [wireshark][2] and start a new capture (select the CAN device - e.g. `can0`).
 
-## Trace data
-After starting the tractor, wireshark should capture raw [CAN bus][3] data. Please see an example screenprint below. ![](../assets/wsharkCaptureCan.png)
+## Step 3: Start Engine
+Fire up the engine of the tractor. Note that to capture CAN messages, it should be enough to start board computer without the engine. To retrieve all messages, continue starting the engine. If the only messages you see are bus valuation messages, you may have used the wrong baudrate.
+
+## Step 4: Trace data
+After starting the engine, Wireshark should show all messages in raw [CAN bus][3] format. Please take a look at the example screenshot below. 
+
+![](../assets/wsharkCaptureCan.png)
 
 [1]: (https://canable.io/)
 [2]: (https://www.wireshark.org/)
