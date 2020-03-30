@@ -5,36 +5,44 @@
 <br><br>
 
 ## General
-JohnFear is an open source project with the goal to reverse engineer [John Deere][1] tractors. At first we will more or less only focus exploiting the [can bis][2]. [John Deere][1] follows the industry standards and uses the [J1939][9] protocol for the control unit intercommunication. Because the [can bus][2] traffic is not encrypted, we see here your best change for extracting and manipulating the tractor.
+JohnFear is an open source project with the goal to reverse engineer [John Deere][1] tractors. At first we will focus on exploiting the [CAN bus][2] system. [John Deere][1] follows the industry standard and uses the [J1939][9] protocol for the control unit intercommunication. As the [CAN bus][2] traffic is not encrypted, we assume that this is the best entry point for the vehicle exploitation.
 
 Please keep in mind that this project is a **work in progress** and the advancements are limited by our time and money.
 
 ## CAN basics
-Sorry guess but we will not explain the [can bus][2] in detail here. The most important attitue is mainly also the reason why we have started this project. [Can bus][2] broadcasts all the messages, which means that we can sniff all the data and anlysis it offline.
+Sorry guys but we will not explain the [CAN bus][2] in detail here.  
 
-We suggest to go throw some tutorials first before you continue reading. Basically you can just google for can bus and you will get a bunch of information to go throw.
+In a nutshell: the most important aspect is the **broadcasting** of all messages, which allows us to sniff all the data and analyze it offline.
+
+We suggest checking out some tutorials before you continue reading. Google is your friend here and will provide you with a solid foundation of the knowledge needed in this project.
+
 * [Wikipedia][2]
 * [Tractor Hacking][5]
 * [CSS electronics][8]
 
-The takeaway should be that [can bus][2] is used as physical layer for transporting [J1939][9] messages.
+The main takeaway should be that [CAN bus][2] is used as a physical layer for transporting [J1939][9] messages.
 
 ## J1939
-Yey you have finished the [can bus][2] section, so we assume yuo are an expert now. However let's check out what [J1939][9] is use for. In a nutshell it defined the messages tracture and is published by [SAE][10] (Society of Automotive Entineers). The entire standard is published within multiple papers, at first we will only need J1939/71, which describs the PGN (Parameter Group Number) and SPNs (Suspect Parameter Number). We really recommend to go throw this [guide](https://www.csselectronics.com/screen/page/simple-intro-j1939-explained).
-Quite a good explanation can be found [here][11] and [here][12] as well.
+Since you've finished absorbing the [CAN basics][2] section, we assume you are pretty much an expert now. Nevertheless, let's check out what [J1939][9] is used for.
+
+In a nutshell [J1939][9] defines the vehicle messages and is published by the [SAE][10] (Society of Automotive Entineers). The entire standard is published within multiple papers but we will only focus on the J1939/71, which describes the PGNs (Parameter Group Numbers) and SPNs (Suspect Parameter Numbers). 
+
+We recommend going through this [guide](https://www.csselectronics.com/screen/page/simple-intro-j1939-explained).
+
+Another good explanation can be found [here][11] and [here][12].
 
 ## Related work
-There is already some progress out there, so we have not started entirly from scratch. Please checkout [Tractor Hacking][5] from the California Polytechnic State University which is also an open source project. You can find some sniffed data in there github repository as well. In addition, they have written already and client in python refered to [PolyCan][6]. In your opinion we do not see any need to use this tool, because we achieved the same with Wireshark.
+There is already some work out there, therefore we also haven't started entirly from scratch. Please checkout [Tractor Hacking][5] from the California Polytechnic State University, which is also an open source project. You can find some sniffed data in their GitHub repository as well. In addition, they have already written a client application in Python ([PolyCan][6]). In our opinion, this tool is not needed in this project because Wireshark provides us already with the necessary information.
 
-We recommand also to have a look at [CSS electronics][8]. Unfortunatly they only offer commercial project, but you can find really fantastic explainations on there side.
+We also recommend having a look at [CSS electronics][8]. Unfortunately, they only offer a commercial project, but you can find really good explainations of the subject on their site.
 
 ## Goals
-The final goal of this project is not really defined. We will try to keep moving on as far as possible.
+At the moment, the goal of this project is not entirely clear. We will try to keep exploiting the traktor as far as possible.
 
 ###  First goal
-At first we will focus on sniffing only. The goal is to sniff and decode the [J1939][9] messages in real time with wireshark. This is basically already available by [CSS electronics][8], but let's get it done open source.
+At first, we will focus on sniffing only. The goal is to sniff and decode the [J1939][9] messages in real time with wireshark. This is already available by [CSS electronics][8], but let's get it done open source.
 
-Please checkout your tutorial how to [sniff can bus data](./docs/howToCapture.md)
+Please check out our tutorial on how to [sniff CAN bus data](./docs/howToCapture.md).
 
 ## Contributors ✨
 
